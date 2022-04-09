@@ -2,7 +2,7 @@ import tactic
 import data.rel
 import data.vector
 import data.nat.basic
-import ruby.basic
+import ruby.defs
 
 open rel vector nat
 

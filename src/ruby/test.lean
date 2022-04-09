@@ -1,14 +1,11 @@
 import tactic
-import init.meta.interactive
-import init.meta.converter.conv
-import data.rel
-import data.vector
-import data.nat.basic
-import ruby.pipeline
-import ruby.tactics
+import ruby.rewrite1
 
-open rel vector nat
+open rel
 
 variables {α β γ δ ε φ ψ : Type}
 
-set_option trace.app_builder true
+--set_option trace.app_builder true
+
+example (r : rel (α × β) γ) (s : rel α δ) (t : rel γ ε)
+  : (r† ;; [s, idd])† ;; t = (idd ;; [s†, idd] ;; r) ;; t := by ruby_nf
